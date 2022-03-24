@@ -42,6 +42,7 @@ test:
   commands:
     - pip check
     - openfe --help
+    - python -c "import openfe; print(openfe.__version__)"
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
