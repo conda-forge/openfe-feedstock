@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.1" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 03b6531ed7c8b03f09294c9792ce465633c1d2e6aa60d0e34344a14b3dc56b96
+  sha256: 539e431674fd94e306ae9b39957dcb611be6864e19bd9ff8504a047c4ad1da74
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -48,7 +48,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Alchemical free energy calculations for the masses.'
+  summary: Alchemical free energy calculations for the masses.
   description: |
     The Open Free Energy (OpenFE) project is dedicated to the development 
     of open source tools for binding free energy calculations to guide 
