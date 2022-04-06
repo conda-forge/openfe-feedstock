@@ -30,6 +30,12 @@ requirements:
     - python >=3.8
     - rdkit
     - typing-extensions
+    - gufe ==0.2
+    - pydantic
+    - openff-units
+    - openmmforcefields
+    - openmmtools
+    - openmm
 
 test:
   imports:
