@@ -32,7 +32,7 @@ requirements:
     - typing-extensions
     - gufe ==0.2
     - pydantic
-    - openff-units >= 0.1.6
+    - openff-units >=0.1.6
     - openmmforcefields
     - openmmtools
     - openmm
