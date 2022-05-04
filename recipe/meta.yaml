@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 47502031d603314c367610f7373c5b67d13f80de3e286073bb090773e73d4ca8
+  sha256: eef5161178d4a19d6511b8d70b4bcb35cf906cdb26291206fec43e5ea1f72d8e
 
 build:
   noarch: python
