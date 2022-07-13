@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: eef5161178d4a19d6511b8d70b4bcb35cf906cdb26291206fec43e5ea1f72d8e
+  sha256: 32cac3f1fe8b74bf0a73672b33fbb40757f298d10c6156d6afbccaf87828d87b
 
 build:
   noarch: python
