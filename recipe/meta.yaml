@@ -40,10 +40,7 @@ requirements:
 
 test:
   imports:
-    - openfe.setup
-    - openfe.orchestration
-    - openfe.simulation
-    - openfe.analysis
+    - openfe
   requires:
     - pip
   commands:
