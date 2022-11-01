@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.3" %}
+{% set version = "0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 32cac3f1fe8b74bf0a73672b33fbb40757f298d10c6156d6afbccaf87828d87b
+  sha256: ec7c60447b040c8ce8a3e3d50f263bd1494ad614a1b257532789a3bf773f5fc5
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.9
   run:
     - click
     - lomap2 >=2.1.0
@@ -27,22 +27,20 @@ requirements:
     - numpy
     - openff-toolkit
     - plugcli
-    - python >=3.8
+    - python >=3.9
     - rdkit
     - typing-extensions
-    - gufe ==0.2
+    - gufe ==0.4
     - pydantic
-    - openff-units >=0.1.6
-    - openmmforcefields
+    - openff-units ==0.1.8
+    - openff-toolkit ==0.11
+    - openmmforcefields >=0.11.2
     - openmmtools
     - openmm
 
 test:
   imports:
-    - openfe.setup
-    - openfe.orchestration
-    - openfe.simulation
-    - openfe.analysis
+    - openfe
   requires:
     - pip
   commands:
