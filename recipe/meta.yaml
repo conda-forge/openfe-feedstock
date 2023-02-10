@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f1967fcdd46976ecc46c95dab4e21e2cd813004a2ce8d9793ba2f3fb625bee77
+  sha256: 6355af2f722a9baba876759cb796c207535ac20aeaea1378ab062a62a93387d9
 
 build:
   noarch: python
-  number: 2
+  number: 3
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,7 +24,7 @@ requirements:
     - click
     - lomap2 >=2.1.0
     - networkx
-    - numpy
+    - numpy <1.24.0
     - openff-toolkit
     - plugcli
     - python >=3.9
