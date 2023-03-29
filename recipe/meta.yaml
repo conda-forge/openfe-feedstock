@@ -37,6 +37,7 @@ requirements:
     - openmmforcefields >=0.11.2
     - openmmtools
     - openmm
+    - libnetcdf<4.9
 
 test:
   imports:
