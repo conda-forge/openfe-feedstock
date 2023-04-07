@@ -1,13 +1,13 @@
 {% set name = "openfe" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0rc1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c3453f8477dfacd61babce5ef9ac1b42fe559261943e0f09c1caffbfb9ae1fc9
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: "0b35cb28e437183d5b54e5d15053fb9f9b130239"
 
 build:
   noarch: python
@@ -22,22 +22,22 @@ requirements:
     - python >=3.9
   run:
     - click
+    - gufe ==0.6.*
+    - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24.0
-    - openff-toolkit
+    - openff-models >=0.0.4
+    - openff-toolkit >=0.12.0
+    - openff-units >=0.2.0
+    - openmm
+    - openmmforcefields >=0.11.2
+    - openmmtools
     - plugcli
+    - pydantic
     - python >=3.9
     - rdkit
     - typing-extensions
-    - gufe ==0.6.*
-    - pydantic
-    - openff-units
-    - openff-toolkit
-    - openmmforcefields >=0.11.2
-    - openmmtools
-    - openmm
-    - libnetcdf <4.9
 
 test:
   imports:
