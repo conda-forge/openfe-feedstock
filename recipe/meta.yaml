@@ -14,12 +14,13 @@ build:
   number: 0
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
     - python >=3.9
+    - versioningit
   run:
     - click
     - gufe ==0.6.*
@@ -47,6 +48,8 @@ test:
   commands:
     - pip check
     - openfe --help
+    - openfe --version
+    - python -c "import openfe; print(openfe.__version__)"
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
