@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: "f3bdc76fd39d874b498d8e146622b85489c2fea3"
+  git_rev: "9baee6e254715dbc71cc72e32a9aab9b153843f7"
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe ==0.6.*
+    - gufe ==0.7.*
     - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
