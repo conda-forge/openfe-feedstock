@@ -6,15 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bfac51d310dfbfa47ad03fc722d26c636b51375ee768acd34c095a5a7df6b892
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: v{{ version }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -47,6 +47,7 @@ test:
   commands:
     - pip check
     - openfe --help
+    - openfe --version
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
