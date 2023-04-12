@@ -6,38 +6,39 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bfac51d310dfbfa47ad03fc722d26c636b51375ee768acd34c095a5a7df6b892
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: 3e34f3a00529b1266016ad467eaaf4ef3f8b1cfa
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
     - python >=3.9
+    - versioningit
   run:
     - click
+    - gufe ==0.7.*
+    - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24.0
     - openff-toolkit
+    - openff-toolkit
+    - openff-units
+    - openmm
+    - openmmforcefields >=0.11.2
+    - openmmtools
     - plugcli
+    - pydantic
     - python >=3.9
     - rdkit
     - typing-extensions
-    - gufe ==0.7.*
-    - pydantic
-    - openff-units
-    - openff-toolkit
-    - openmmforcefields >=0.11.2
-    - openmmtools
-    - openmm
-    - libnetcdf <4.9
 
 test:
   imports:
@@ -47,6 +48,7 @@ test:
   commands:
     - pip check
     - openfe --help
+    - openfe --version
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
