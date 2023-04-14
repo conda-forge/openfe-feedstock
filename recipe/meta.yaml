@@ -50,7 +50,7 @@ test:
     - pip check
     - openfe --help
     - openfe --version
-    - pytest -v --pyarges openfe
+    - pytest -v --pyargs openfe
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
