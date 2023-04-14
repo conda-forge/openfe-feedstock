@@ -27,10 +27,10 @@ requirements:
     - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
-    - numpy <1.24.0
-    - openff-toolkit
-    - openff-toolkit
-    - openff-units
+    - numpy <1.24
+    - openff-models >=0.0.4
+    - openff-toolkit >=0.12.0
+    - openff-units >=0.2.0
     - openmm
     - openmmforcefields >=0.11.2
     - openmmtools
