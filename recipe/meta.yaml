@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -23,7 +23,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe ==0.7.2
+    - gufe >=0.7.1,<0.8.0
     - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
