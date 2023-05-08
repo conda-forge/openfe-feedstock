@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.7.4" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: 2438a84
+  git_rev: be7593d
   git_depth: 1
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -24,14 +24,12 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe ==0.7.3
+    - gufe ==0.8
     - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24
-    - openff-models >=0.0.4
     - openff-toolkit ==0.13
-    - openff-units >=0.2.0
     - openmm
     - openmmforcefields >=0.11.2
     - openmmtools
