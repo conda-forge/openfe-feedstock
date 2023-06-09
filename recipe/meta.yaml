@@ -39,6 +39,7 @@ requirements:
     - rdkit
     - typing-extensions
     - pytest
+    - pymbar <4.0
 
 test:
   imports:
