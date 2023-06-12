@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: 501aded406bf28a97bcae6f49d0ab0bc0a79c0d4
+  git_rev: 6f68753
   git_depth: 1
 
 build:
@@ -24,7 +24,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe ==0.8
+    - gufe ==0.9
     - libnetcdf <4.9
     - lomap2 >=2.1.0
     - networkx
@@ -36,6 +36,7 @@ requirements:
     - plugcli
     - pydantic
     - python >=3.9
+    - pymbar <4.0  # openfe #443
     - rdkit
     - typing-extensions
     - pytest
