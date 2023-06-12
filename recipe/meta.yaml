@@ -36,6 +36,7 @@ requirements:
     - plugcli
     - pydantic
     - python >=3.9
+    - pymbar<4.0  # openfe #443
     - rdkit
     - typing-extensions
     - pytest
