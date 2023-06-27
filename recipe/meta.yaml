@@ -47,11 +47,11 @@ test:
   requires:
     - pip
     - pytest
+    - pytest-xdist
   commands:
-    - pip check
     - openfe --help
     - openfe --version
-    - pytest -v --pyargs openfe
+    - pytest -v --pyargs openfe openfecli
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
