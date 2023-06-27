@@ -51,7 +51,7 @@ test:
   commands:
     - openfe --help
     - openfe --version
-    - pytest -v --pyargs openfe openfecli
+    - pytest -v -n auto --pyargs openfe openfecli
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
