@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: v{{ version }}
+  git_rev: fe7e7f7209a93803e163ffb85b497d1a28e75737
   git_depth: -1
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
