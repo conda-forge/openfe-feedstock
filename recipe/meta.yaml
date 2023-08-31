@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.12.1" %}
+{% set version = "0.13.0dev" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: fe7e7f7209a93803e163ffb85b497d1a28e75737
+  git_rev: 754ce7ba048ee0a4daabcc0cb365e41509d292e9
   git_depth: -1
 
 build:
@@ -24,22 +24,23 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe >=0.9,<0.10
+    - gufe
     - lomap2 >=2.1.0
     - networkx
-    - numpy <1.24
-    - openff-toolkit >=0.14,<0.15
+    - numpy 
+    - openff-toolkit
     - openmm
     - openmmforcefields >=0.11.2
-    - openmmtools >=0.23.0,<0.24
+    - openmmtools
     - plugcli
-    - pydantic <2.0
+    - pydantic
     - python >=3.9
     - pymbar <4.0  # openfe #443
     - rdkit
     - typing-extensions
     - pytest
     - pygraphviz
+    - cinnabar
 
 test:
   imports:
