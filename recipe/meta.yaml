@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -24,7 +24,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe >=0.9,<0.10
+    - gufe >=0.9.3,<0.10
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24
@@ -33,13 +33,13 @@ requirements:
     - openmmforcefields >=0.11.2
     - openmmtools >=0.23.0,<0.24
     - plugcli
-    - pydantic <2.0
     - python >=3.9
     - pymbar <4.0  # openfe #443
     - rdkit
     - typing-extensions
     - pytest
     - pygraphviz
+    - cinnabar ==0.3.0
 
 test:
   imports:
