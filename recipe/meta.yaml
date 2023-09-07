@@ -28,7 +28,7 @@ requirements:
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24
-    - openff-toolkit >=0.13,<0.14
+    - openff-toolkit >=0.13
     - openmm
     - openmmforcefields >=0.11.2
     - openmmtools >=0.23.0,<0.24
