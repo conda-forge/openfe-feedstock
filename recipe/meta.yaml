@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.13.0dev" %}
+{% set version = "0.14.0dev0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: 754ce7ba048ee0a4daabcc0cb365e41509d292e9
+  git_rev: e2eeb85356a5426a3d54aa2e61f6b01212ac770e
   git_depth: -1
 
 build:
