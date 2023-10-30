@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -24,7 +24,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe >=0.9.3,<0.10
+    - gufe >=0.9.5,<0.10
     - lomap2 >=2.1.0
     - networkx
     - numpy <1.24
