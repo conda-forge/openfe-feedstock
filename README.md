@@ -7,15 +7,16 @@ Home: https://github.com/OpenFreeEnergy/openfe
 
 Package license: MIT
 
-Summary: Alchemical free energy calculations for the masses.
+Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
 Documentation: https://openfe.rtfd.io/
 
-The Open Free Energy (OpenFE) project is dedicated to the development
-of open source tools for binding free energy calculations to guide
-pharmaceutical drug design and discovery.
+The Open Free Energy (OpenFE) project is dedicated to the maintenance and
+development of open source tools for free energy calculations to guide
+pharmaceutical drug design and discovery. This package enables researchers
+to plan, execute, and analyze networks of free energy calculations.
 
 
 Current build status
@@ -104,7 +105,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
