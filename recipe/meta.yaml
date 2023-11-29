@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -40,7 +40,7 @@ requirements:
     - pytest
     - pygraphviz
     - py3dmol
-    - cinnabar ==0.3.0
+    - cinnabar <0.5
 
 test:
   imports:
