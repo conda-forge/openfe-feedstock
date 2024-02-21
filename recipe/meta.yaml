@@ -24,7 +24,7 @@ requirements:
     - versioningit
   run:
     - click
-    - gufe =1.0.0rc0
+    - gufe >=1.0.0rc0
     - lomap2 >=2.1.0
     - networkx
     - numpy
