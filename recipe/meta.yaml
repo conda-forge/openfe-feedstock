@@ -1,64 +1,74 @@
 {% set name = "openfe" %}
-{% set version = "0.6.1" %}
+{% set version = "1.0.0rc1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/openfe/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c3453f8477dfacd61babce5ef9ac1b42fe559261943e0f09c1caffbfb9ae1fc9
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: v{{ version }}
+  git_depth: -1
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
     - python >=3.9
+    - versioningit
   run:
     - click
+    - gufe >=1.0.0rc0
     - lomap2 >=2.1.0
     - networkx
-    - numpy <1.24.0
-    - openff-toolkit
+    - numpy
+    - openff-toolkit >=0.13,<0.16
+    - openmm 
+    - openmmforcefields >=0.11.2
+    - openmmtools >=0.23.0,<0.24
     - plugcli
     - python >=3.9
+    - pymbar <4.0  # openfe #443
     - rdkit
     - typing-extensions
-    - gufe ==0.6.*
-    - pydantic
-    - openff-units
-    - openff-toolkit
-    - openmmforcefields >=0.11.2
-    - openmmtools
-    - openmm
-    - libnetcdf <4.9
+    - pooch
+    - pytest
+    - pygraphviz
+    - py3dmol
+    - cinnabar <0.5
+    - kartograf >=1.0.0
+    - openfe-analysis >=0.2.0
 
 test:
   imports:
     - openfe
   requires:
     - pip
+    - pytest
+    - pytest-xdist
   commands:
-    - pip check
     - openfe --help
+    - openfe --version
+    - pytest -v -n auto --pyargs openfe openfecli
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Alchemical free energy calculations for the masses.
+  summary: Free software for Free Energies.
   description: |
-    The Open Free Energy (OpenFE) project is dedicated to the development 
-    of open source tools for binding free energy calculations to guide 
-    pharmaceutical drug design and discovery.
-  doc_url: https://openfe.rtfd.io/
+    The Open Free Energy (OpenFE) project is dedicated to the maintenance and
+    development of open source tools for free energy calculations to guide 
+    pharmaceutical drug design and discovery. This package enables researchers
+    to plan, execute, and analyze networks of free energy calculations.
+  doc_url: https://docs.openfree.energy
   dev_url: https://github.com/OpenFreeEnergy/openfe
 
 extra:
