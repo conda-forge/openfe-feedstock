@@ -1,21 +1,22 @@
-About openfe
-============
+About openfe-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/OpenFreeEnergy/openfe
 
 Package license: MIT
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstock/blob/main/LICENSE.txt)
-
-Summary: Alchemical free energy calculations for the masses.
+Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://openfe.rtfd.io/
+Documentation: https://docs.openfree.energy
 
-The Open Free Energy (OpenFE) project is dedicated to the development
-of open source tools for binding free energy calculations to guide
-pharmaceutical drug design and discovery.
+The Open Free Energy (OpenFE) project is dedicated to the maintenance and
+development of open source tools for free energy calculations to guide
+pharmaceutical drug design and discovery. This package enables researchers
+to plan, execute, and analyze networks of free energy calculations.
 
 
 Current build status
@@ -41,14 +42,14 @@ Current release info
 Installing openfe
 =================
 
-Installing `openfe` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `openfe` from the `conda-forge/label/openfe_rc` channel can be achieved by adding `conda-forge/label/openfe_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/openfe_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openfe` can be installed with `conda`:
+Once the `conda-forge/label/openfe_rc` channel has been enabled, `openfe` can be installed with `conda`:
 
 ```
 conda install openfe
@@ -63,26 +64,26 @@ mamba install openfe
 It is possible to list all of the versions of `openfe` available on your platform with `conda`:
 
 ```
-conda search openfe --channel conda-forge
+conda search openfe --channel conda-forge/label/openfe_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search openfe --channel conda-forge
+mamba search openfe --channel conda-forge/label/openfe_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search openfe --channel conda-forge
+mamba repoquery search openfe --channel conda-forge/label/openfe_rc
 
 # List packages depending on `openfe`:
-mamba repoquery whoneeds openfe --channel conda-forge
+mamba repoquery whoneeds openfe --channel conda-forge/label/openfe_rc
 
 # List dependencies of `openfe`:
-mamba repoquery depends openfe --channel conda-forge
+mamba repoquery depends openfe --channel conda-forge/label/openfe_rc
 ```
 
 
@@ -104,7 +105,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
