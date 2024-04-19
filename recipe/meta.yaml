@@ -23,23 +23,23 @@ requirements:
     - python >=3.9
     - versioningit
   run:
-    - cinnabar <0.5
+    - cinnabar ~=0.4.0
     - click
-    - gufe >=1.0.0
-    - kartograf >=1.0.0
-    - lomap2 >=2.1.0
+    - gufe ~=1.0
+    - kartograf ~=1.0
+    - lomap2 ~=2.1
     - networkx
     - numpy
-    - openfe-analysis >=0.2.0
+    - openfe-analysis ~=0.2.0
     - openff-toolkit >=0.13,<0.16
-    - openmm 
-    - openmmforcefields >=0.11.2
-    - openmmtools >=0.23.0,<0.24
+    - openmm !=8.1.0
+    - openmmforcefields ~=0.11.2
+    - openmmtools ~=0.23.0
     - plugcli
     - pooch
     - py3dmol
     - pygraphviz
-    - pymbar <4.0  # openfe #443
+    - pymbar ~=3.0  # openfe #443
     - pytest
     - python >=3.9
     - rdkit
