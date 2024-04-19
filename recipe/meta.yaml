@@ -27,7 +27,7 @@ requirements:
     - click
     - gufe ~=1.0
     - kartograf ~=1.0
-    - lomap2 ~=2.1
+    - lomap2 ~=3.0
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
