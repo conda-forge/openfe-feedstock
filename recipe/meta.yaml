@@ -28,6 +28,7 @@ requirements:
     - gufe ~=1.0
     - kartograf ~=1.0
     - lomap2 ~=3.0
+    - matplotlib-base <3.9.0  # openfe #878
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
