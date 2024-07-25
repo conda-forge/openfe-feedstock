@@ -9,10 +9,12 @@ source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
   git_rev: v{{ version }}
   git_depth: -1
+  patches:
+    - recipe/patches/fix-gaff-tests.patch
 
 build:
   noarch: python
-  number: 1
+  number: 2
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -34,7 +36,7 @@ requirements:
     - openfe-analysis ~=0.2.0
     - openff-toolkit >=0.13,<0.16
     - openmm !=8.1.0
-    - openmmforcefields <0.14
+    - openmmforcefields <0.15
     - openmmtools ~=0.23.0
     - packaging
     - plugcli
