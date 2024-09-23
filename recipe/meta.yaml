@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -24,6 +24,7 @@ requirements:
     - pip
     - python >=3.9
     - versioningit
+    - setuptools
   run:
     - cinnabar ~=0.4.0
     - click
@@ -79,6 +80,5 @@ about:
 extra:
   recipe-maintainers:
     - mikemhenry
-    - richardjgowers
     - IAlibay
     - dwhswenson
