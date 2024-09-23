@@ -48,7 +48,6 @@ requirements:
     - pytest
     - python >=3.9
     - rdkit
-    - setuptools
     - typing-extensions
 
 test:
