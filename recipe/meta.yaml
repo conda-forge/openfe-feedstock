@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -9,12 +9,10 @@ source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
   git_rev: v{{ version }}
   git_depth: -1
-  patches:
-    - patches/fix-gaff-tests.patch
 
 build:
   noarch: python
-  number: 4
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -35,14 +33,15 @@ requirements:
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
-    - openff-toolkit >=0.13,<0.17
-    - openmm !=8.1.0
+    - openff-toolkit >=0.16,<0.17
+    - openmm !=8.1.0,>=8.0.0
     - openmmforcefields <0.15
     - openmmtools ~=0.23.0
     - packaging
     - plugcli
     - pooch
     - py3dmol
+    - pydantic >=1.10.17
     - pygraphviz
     - pymbar ~=3.0  # openfe #443
     - pytest
