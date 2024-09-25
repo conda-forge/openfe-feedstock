@@ -33,7 +33,7 @@ requirements:
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
-    - openff-toolkit >=0.13,<0.17
+    - openff-toolkit >=0.16,<0.17
     - openmm !=8.1.0,>=8.0.0
     - openmmforcefields <0.15
     - openmmtools ~=0.23.0
