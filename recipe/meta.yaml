@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python >=3.10
     - versioningit
     - setuptools
   run:
@@ -29,7 +29,7 @@ requirements:
     - gufe >=1.1.0
     - kartograf ~=1.0
     - lomap2 ~=3.0
-    - matplotlib-base <3.9.0  # openfe #878
+    - matplotlib-base
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
