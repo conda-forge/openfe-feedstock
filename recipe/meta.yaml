@@ -45,7 +45,7 @@ requirements:
     - pygraphviz
     - pymbar ~=3.0  # openfe #443
     - pytest
-    - python >=3.9
+    - python >=3.10
     - rdkit
     - typing-extensions
 
