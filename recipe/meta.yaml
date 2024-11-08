@@ -1,5 +1,5 @@
 {% set name = "openfe" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -20,16 +20,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python >=3.10
     - versioningit
     - setuptools
   run:
     - cinnabar ~=0.4.0
     - click
-    - gufe ~=1.0
+    - gufe >=1.1.0
     - kartograf ~=1.0
     - lomap2 ~=3.0
-    - matplotlib-base <3.9.0  # openfe #878
+    - matplotlib-base
     - networkx
     - numpy
     - openfe-analysis ~=0.2.0
@@ -45,7 +45,7 @@ requirements:
     - pygraphviz
     - pymbar ~=3.0  # openfe #443
     - pytest
-    - python >=3.9
+    - python >=3.10
     - rdkit
     - typing-extensions
 
@@ -81,3 +81,4 @@ extra:
     - mikemhenry
     - IAlibay
     - dwhswenson
+    - atravitz
