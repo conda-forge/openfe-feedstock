@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "openfe" %}
 {% set version = "1.2.0" %}
 
@@ -12,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -20,7 +21,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
     - versioningit
     - setuptools
   run:
@@ -45,7 +46,7 @@ requirements:
     - pygraphviz
     - pymbar ~=3.0  # openfe #443
     - pytest
-    - python >=3.10
+    - python >={{ python_min }}
     - rdkit
     - typing-extensions
 
@@ -57,6 +58,7 @@ test:
     - pytest
     - pytest-xdist
     - openmmforcefields=0.12
+    - python {{ python_min }}
   commands:
     - openfe --help
     - openfe --version
