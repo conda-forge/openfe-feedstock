@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -27,7 +27,7 @@ requirements:
   run:
     - cinnabar ~=0.4.0
     - click
-    - gufe >=1.1.0
+    - gufe >=1.1.0,<1.2
     - kartograf ~=1.0
     - lomap2 ~=3.0
     - matplotlib-base
@@ -37,7 +37,7 @@ requirements:
     - openff-toolkit >=0.16,<0.17
     - openmm !=8.1.0,>=8.0.0,<8.2
     - openmmforcefields <0.15
-    - openmmtools ~=0.23.0
+    - openmmtools >=0.24.1, <0.25
     - packaging
     - plugcli
     - pooch
