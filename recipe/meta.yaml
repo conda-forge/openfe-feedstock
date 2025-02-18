@@ -37,7 +37,7 @@ requirements:
     - openff-toolkit >=0.16,<0.17
     - openmm !=8.1.0,>=8.0.0,<8.2
     - openmmforcefields <0.15
-    - openmmtools >=0.24.1, <0.25
+    - openmmtools ~=0.23.0  # >=0.24.1, <0.25
     - packaging
     - plugcli
     - pooch
