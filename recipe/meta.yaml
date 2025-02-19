@@ -27,7 +27,7 @@ requirements:
   run:
     - cinnabar ~=0.4.0
     - click
-    - gufe ~=1.2
+    - gufe ~=1.2.0
     - kartograf ~=1.0
     - lomap2 >=3.2.1
     - matplotlib-base
