@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -48,6 +48,7 @@ requirements:
     - pytest
     - python >={{ python_min }}
     - rdkit
+    - threadpoolctl
     - typing-extensions
 
 test:
