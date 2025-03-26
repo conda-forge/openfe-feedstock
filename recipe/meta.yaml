@@ -48,6 +48,7 @@ requirements:
     - pytest
     - python >={{ python_min }}
     - rdkit
+    - threadpoolctl
     - typing-extensions
 
 test:
