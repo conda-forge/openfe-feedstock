@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - openfe = openfecli.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps
@@ -37,7 +37,7 @@ requirements:
     - openff-toolkit >=0.16,<0.17
     - openmm !=8.1.0,>=8.0.0,<8.2
     - openmmforcefields <0.15
-    - openmmtools >=0.24.1, <0.25
+    - openmmtools >=0.24.1,<0.25
     - packaging
     - plugcli
     - pooch
@@ -58,7 +58,7 @@ test:
     - pip
     - pytest
     - pytest-xdist
-    - openmmforcefields=0.12
+    - openmmforcefields =0.12
     - python {{ python_min }}
   commands:
     - openfe --help
