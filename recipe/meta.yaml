@@ -35,6 +35,7 @@ requirements:
     - numpy <2.0.0
     - openfe-analysis ~=0.3.1
     - openff-toolkit >=0.16,<0.17
+    - openmmforcefields <0.15
     - openmm !=8.1.0,>=8.0.0,<8.2
     - openmmtools >=0.24.1,<0.25
     - packaging
