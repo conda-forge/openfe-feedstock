@@ -45,6 +45,7 @@ requirements:
     - pygraphviz
     - pymbar >=4.0
     - pytest
+    - pytest-regressions
     - python >={{ python_min }}
     - rdkit
     - rich
@@ -58,7 +59,6 @@ test:
     - pip
     - pytest
     - pytest-xdist
-    - pytest-regressions
     - openmmforcefields =0.12
     - python {{ python_min }}
   commands:
