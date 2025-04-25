@@ -48,6 +48,7 @@ requirements:
     - pytest
     - python >={{ python_min }}
     - rdkit
+    - rich
     - threadpoolctl
     - typing-extensions
 
