@@ -15,14 +15,13 @@ build:
   number: 1
   entry_points:
     - openfe = openfecli.cli:main
-  script: SETUPTOOLS_SCM_DEBUG=TRUE SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
+  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
-    - versioningit
-    - setuptools
+    - setuptools_scm
   run:
     - cinnabar ~=0.4.0
     - click
