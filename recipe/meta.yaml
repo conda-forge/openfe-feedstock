@@ -16,7 +16,7 @@ build:
   number: 0
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} && {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -64,7 +64,7 @@ test:
     - python {{ python_min }}
   commands:
     - openfe --help
-    - openfe --version
+    - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
     - pytest -v -n auto --pyargs openfe openfecli
 
 about:
