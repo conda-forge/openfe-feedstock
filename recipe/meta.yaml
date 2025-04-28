@@ -48,7 +48,7 @@ requirements:
     - pytest
     - pytest-regressions
     - python >={{ python_min }}
-    - rdkit
+    - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
     - rich
     - threadpoolctl
     - typing-extensions
