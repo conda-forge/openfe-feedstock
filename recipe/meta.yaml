@@ -7,8 +7,9 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3c3a94884174346f20810746029096a2bd4074d5590802f041f2c26c4e3d6fc5
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: 2d2fef2a07e4f0da50f881dddbad6c6af0d7c4d1
+  git_depth: -1
 
 build:
   noarch: python
@@ -34,7 +35,8 @@ requirements:
     - numpy
     - openfe-analysis ~=0.3.1
     - openff-toolkit >=0.16,<0.17
-    - openmmforcefields <0.15
+    - openff-units==0.3.0=pyhd8ed1ab_1 # For some reason, it wants the _0 build with is broken
+    - openmmforcefields ==0.14.2
     - openmm !=8.1.0,>=8.0.0
     - openmmtools >=0.24.1,<0.25
     - packaging
@@ -59,7 +61,6 @@ test:
     - pip
     - pytest
     - pytest-xdist
-    - openmmforcefields =0.12
     - python {{ python_min }}
   commands:
     - openfe --help
