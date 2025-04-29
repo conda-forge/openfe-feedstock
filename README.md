@@ -42,14 +42,14 @@ Current release info
 Installing openfe
 =================
 
-Installing `openfe` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `openfe` from the `conda-forge/label/openfe_dev` channel can be achieved by adding `conda-forge/label/openfe_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/openfe_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openfe` can be installed with `conda`:
+Once the `conda-forge/label/openfe_dev` channel has been enabled, `openfe` can be installed with `conda`:
 
 ```
 conda install openfe
@@ -64,26 +64,26 @@ mamba install openfe
 It is possible to list all of the versions of `openfe` available on your platform with `conda`:
 
 ```
-conda search openfe --channel conda-forge
+conda search openfe --channel conda-forge/label/openfe_dev
 ```
 
 or with `mamba`:
 
 ```
-mamba search openfe --channel conda-forge
+mamba search openfe --channel conda-forge/label/openfe_dev
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search openfe --channel conda-forge
+mamba repoquery search openfe --channel conda-forge/label/openfe_dev
 
 # List packages depending on `openfe`:
-mamba repoquery whoneeds openfe --channel conda-forge
+mamba repoquery whoneeds openfe --channel conda-forge/label/openfe_dev
 
 # List dependencies of `openfe`:
-mamba repoquery depends openfe --channel conda-forge
+mamba repoquery depends openfe --channel conda-forge/label/openfe_dev
 ```
 
 
@@ -105,7 +105,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
@@ -154,7 +154,7 @@ Feedstock Maintainers
 =====================
 
 * [@IAlibay](https://github.com/IAlibay/)
+* [@atravitz](https://github.com/atravitz/)
 * [@dwhswenson](https://github.com/dwhswenson/)
 * [@mikemhenry](https://github.com/mikemhenry/)
-* [@richardjgowers](https://github.com/richardjgowers/)
 
