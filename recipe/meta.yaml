@@ -59,7 +59,6 @@ test:
     - pip
     - pytest
     - pytest-xdist
-    - openmmforcefields =0.12
     - python {{ python_min }}
   commands:
     - openfe --help
