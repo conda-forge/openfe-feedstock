@@ -11,7 +11,7 @@ Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://docs.openfree.energy
+Documentation: https://openfe.rtfd.io/
 
 The Open Free Energy (OpenFE) project is dedicated to the maintenance and
 development of open source tools for free energy calculations to guide
@@ -154,7 +154,7 @@ Feedstock Maintainers
 =====================
 
 * [@IAlibay](https://github.com/IAlibay/)
+* [@atravitz](https://github.com/atravitz/)
 * [@dwhswenson](https://github.com/dwhswenson/)
 * [@mikemhenry](https://github.com/mikemhenry/)
-* [@richardjgowers](https://github.com/richardjgowers/)
 
