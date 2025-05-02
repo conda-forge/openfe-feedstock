@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   entry_points:
     - openfe = openfecli.cli:main
   script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
@@ -34,9 +34,9 @@ requirements:
     - numpy
     - openfe-analysis ~=0.3.1
     - openff-toolkit >=0.16,<0.17
-    - openmmforcefields <0.15
     - openmm !=8.1.0,>=8.0.0,<8.2
-    - openmmtools >=0.24.1,<0.25
+    - openmmforcefields <0.15
+    - openmmtools >=0.24.2,<0.25
     - packaging
     - plugcli
     - pooch
@@ -82,7 +82,7 @@ about:
 
 extra:
   recipe-maintainers:
-    - mikemhenry
     - IAlibay
-    - dwhswenson
     - atravitz
+    - dwhswenson
+    - mikemhenry
