@@ -1,5 +1,6 @@
+{% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.0.0rc1" %}
+{% set version = "1.5.0a0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,42 +8,49 @@ package:
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: v{{ version }}
+  git_rev: c402351eb3d4e2bc83415349530526d23eb8fe41
   git_depth: -1
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - openfe = openfecli.cli:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
-    - python >=3.9
-    - versioningit
+    - python {{ python_min }}
+    - setuptools
+    - setuptools_scm
   run:
-    - cinnabar <0.5
+    - cinnabar ~=0.4.0
     - click
-    - gufe >=1.0.0rc0
-    - kartograf >=1.0.0
-    - lomap2 >=2.1.0
+    - gufe >=1.4.1,<1.5.0
+    - kartograf ~=1.0
+    - lomap2 >=3.2.1
+    - matplotlib-base
     - networkx
     - numpy
-    - openfe-analysis >=0.2.0
-    - openff-toolkit >=0.13,<0.16
-    - openmm 
-    - openmmforcefields >=0.11.2
-    - openmmtools >=0.23.0,<0.24
+    - openfe-analysis ~=0.3.1
+    - openff-toolkit >=0.16,<0.17
+    - openmmforcefields <0.15
+    - openmm !=8.1.0,>=8.0.0,<8.2
+    - openmmtools >=0.24.2,<0.25
+    - packaging
     - plugcli
     - pooch
     - py3dmol
+    - pydantic >=1.10.17
     - pygraphviz
-    - pymbar <4.0  # openfe #443
+    - pymbar >=4.0
     - pytest
-    - python >=3.9
-    - rdkit
+    - pytest-regressions
+    - python >={{ python_min }}
+    - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
+    - rich
+    - threadpoolctl
     - typing-extensions
 
 test:
@@ -50,12 +58,14 @@ test:
     - openfe
   requires:
     - pip
-    - pytest
     - pytest-xdist
+    - python {{ python_min }}
   commands:
     - openfe --help
     - openfe --version
-    - pytest -v -n auto --pyargs openfe openfecli
+    - python -c "import {{ name }}; print({{ name }}.__version__)"
+    - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
+   #- pytest -v -n auto --pyargs openfe openfecli
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
@@ -68,12 +78,12 @@ about:
     development of open source tools for free energy calculations to guide 
     pharmaceutical drug design and discovery. This package enables researchers
     to plan, execute, and analyze networks of free energy calculations.
-  doc_url: https://docs.openfree.energy
+  doc_url: https://openfe.rtfd.io/
   dev_url: https://github.com/OpenFreeEnergy/openfe
 
 extra:
   recipe-maintainers:
     - mikemhenry
-    - richardjgowers
     - IAlibay
     - dwhswenson
+    - atravitz
