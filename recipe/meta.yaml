@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 3
+  number: 4
   entry_points:
     - openfe = openfecli.cli:main
   script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
@@ -25,7 +25,7 @@ requirements:
     - setuptools_scm
   run:
     - cinnabar ~=0.4.0
-    - click
+    - click <8.2
     - gufe >=1.4.1,<1.5.0
     - kartograf ~=1.0
     - lomap2 >=3.2.1
