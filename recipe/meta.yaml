@@ -64,7 +64,7 @@ test:
     - openfe --version
     - python -c "import {{ name }}; print({{ name }}.__version__)"
     - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
-    - pytest -v -n auto --pyargs openfe openfecli
+    - pytest -v --pyargs openfe openfecli
 
 about:
   home: https://github.com/OpenFreeEnergy/openfe
