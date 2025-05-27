@@ -35,7 +35,7 @@ requirements:
     - openfe-analysis ~=0.3.1
     - openff-toolkit >=0.16,<0.17
     - openmm !=8.1.0,>=8.0.0,<8.2
-    - openmmforcefields >=0.14.2,<0.15
+    - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
     - openmmtools >=0.24.2,<0.25
     - packaging
     - plugcli
