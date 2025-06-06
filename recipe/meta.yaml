@@ -11,7 +11,7 @@ source:
   sha256: 3c3a94884174346f20810746029096a2bd4074d5590802f041f2c26c4e3d6fc5
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - name: openfe-base
@@ -39,7 +39,7 @@ outputs:
         - openfe-analysis ~=0.3.1
         - openff-toolkit >=0.16,<0.17
         - openmm !=8.1.0,>=8.0.0,<8.2
-        - openmmforcefields <0.15
+        - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
         - openmmtools >=0.24.2,<0.25
         - packaging
         - plugcli
