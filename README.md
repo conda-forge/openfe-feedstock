@@ -1,7 +1,49 @@
-About openfe-feedstock
-======================
+About openfe-split-feedstock
+============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstock/blob/main/LICENSE.txt)
+
+
+About openfe-split
+------------------
+
+Home: https://github.com/OpenFreeEnergy/openfe
+
+Package license: MIT
+
+Summary: Free software for Free Energies.
+
+Development: https://github.com/OpenFreeEnergy/openfe
+
+Documentation: https://openfe.rtfd.io/
+
+The Open Free Energy (OpenFE) project is dedicated to the maintenance and
+development of open source tools for free energy calculations to guide 
+pharmaceutical drug design and discovery. This package enables researchers
+to plan, execute, and analyze networks of free energy calculations.
+
+
+About openfe
+------------
+
+Home: https://github.com/OpenFreeEnergy/openfe
+
+Package license: MIT
+
+Summary: Free software for Free Energies.
+
+Development: https://github.com/OpenFreeEnergy/openfe
+
+Documentation: https://openfe.rtfd.io/
+
+The Open Free Energy (OpenFE) project is dedicated to the maintenance and
+development of open source tools for free energy calculations to guide
+pharmaceutical drug design and discovery. This package enables researchers
+to plan, execute, and analyze networks of free energy calculations.
+
+
+About openfe-base
+-----------------
 
 Home: https://github.com/OpenFreeEnergy/openfe
 
@@ -38,27 +80,28 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openfe-green.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-openfe--base-green.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) |
 
-Installing openfe
-=================
+Installing openfe-split
+=======================
 
-Installing `openfe` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `openfe-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openfe` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `openfe, openfe-base` can be installed with `conda`:
 
 ```
-conda install openfe
+conda install openfe openfe-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install openfe
+mamba install openfe openfe-base
 ```
 
 It is possible to list all of the versions of `openfe` available on your platform with `conda`:
@@ -128,17 +171,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating openfe-feedstock
-=========================
+Updating openfe-split-feedstock
+===============================
 
-If you would like to improve the openfe recipe or build a new
+If you would like to improve the openfe-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/openfe-feedstock are
+Note that all branches in the conda-forge/openfe-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.

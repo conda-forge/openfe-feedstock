@@ -3,7 +3,7 @@
 {% set version = "1.4.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: openfe-split
   version: {{ version }}
 
 source:
@@ -11,61 +11,78 @@ source:
   sha256: 3c3a94884174346f20810746029096a2bd4074d5590802f041f2c26c4e3d6fc5
 
 build:
-  noarch: python
-  number: 4
-  entry_points:
-    - openfe = openfecli.cli:main
-  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 5
 
-requirements:
-  host:
-    - pip
-    - python {{ python_min }}
-    - setuptools
-    - setuptools_scm
-  run:
-    - cinnabar ~=0.4.0
-    - click <8.2
-    - gufe >=1.4.1,<1.5.0
-    - kartograf ~=1.0
-    - lomap2 >=3.2.1
-    - matplotlib-base
-    - networkx
-    - numpy
-    - openfe-analysis ~=0.3.1
-    - openff-toolkit >=0.16,<0.17
-    - openmm !=8.1.0,>=8.0.0,<8.2
-    - openmmforcefields <0.15
-    - openmmtools >=0.24.2,<0.25
-    - packaging
-    - plugcli
-    - pooch
-    - py3dmol
-    - pydantic >=1.10.17
-    - pygraphviz
-    - pymbar >=4.0
-    - pytest
-    - pytest-regressions
-    - python >={{ python_min }}
-    - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
-    - rich
-    - threadpoolctl
-    - typing-extensions
+outputs:
+  - name: openfe-base
+    script: build_base.sh
+    build:
+      noarch: python
+    entry_points:
+      - openfe = openfecli.cli:main
 
-test:
-  imports:
-    - openfe
-  requires:
-    - pip
-    - pytest-xdist
-    - python {{ python_min }}
-  commands:
-    - openfe --help
-    - openfe --version
-    - python -c "import {{ name }}; print({{ name }}.__version__)"
-    - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
-    - pytest -v --pyargs openfe openfecli
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+        - setuptools_scm
+      run:
+        - cinnabar ~=0.4.0
+        - click <8.2
+        - gufe >=1.4.1,<1.5.0
+        - kartograf ~=1.0
+        - lomap2 >=3.2.1
+        - matplotlib-base
+        - networkx
+        - numpy
+        - openfe-analysis ~=0.3.1
+        - openff-toolkit >=0.16,<0.17
+        - openmm !=8.1.0,>=8.0.0,<8.2
+        - openmmforcefields <0.15
+        - openmmtools >=0.24.2,<0.25
+        - packaging
+        - plugcli
+        - pooch
+        - py3dmol
+        - pydantic >=1.10.17
+        - pygraphviz
+        - pymbar >=4.0
+        - pytest
+        - pytest-regressions
+        - python >={{ python_min }}
+        - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
+        - rich
+        - threadpoolctl
+        - typing-extensions
+    
+    test:
+      imports:
+        - openfe
+      requires:
+        - pip
+        - pytest-xdist
+        - python {{ python_min }}
+      commands:
+        - openfe --help
+        - openfe --version
+        - python -c "import {{ name }}; print({{ name }}.__version__)"
+        - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
+        - pytest -v --pyargs openfe openfecli
 
+  - name: openfe
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+        - setuptools_scm
+      run:
+        - {{ pin_subpackage('openfe-base', exact=True) }}
+        - jq
 about:
   home: https://github.com/OpenFreeEnergy/openfe
   license: MIT
