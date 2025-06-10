@@ -3,7 +3,7 @@
 {% set version = "1.4.0" %}
 
 package:
-  name: {{ name }}
+  name: openfe-suite
   version: {{ version }}
 
 source:
@@ -114,6 +114,7 @@ about:
   dev_url: https://github.com/OpenFreeEnergy/openfe
 
 extra:
+  feedstock-name: openfe
   recipe-maintainers:
     - IAlibay
     - atravitz
