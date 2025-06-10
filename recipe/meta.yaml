@@ -3,7 +3,7 @@
 {% set version = "1.4.0" %}
 
 package:
-  name: openfe-split
+  name: {{ name }}
   version: {{ version }}
 
 source:
