@@ -44,9 +44,7 @@ outputs:
         - packaging
         - plugcli
         - pooch
-        - py3dmol
         - pydantic >=1.10.17
-        - pygraphviz
         - pymbar >=4.0
         - pytest
         - pytest-regressions
@@ -83,6 +81,8 @@ outputs:
       run:
         - {{ pin_subpackage('openfe-base', exact=True) }}
         - jq
+        - py3dmol
+        - pygraphviz
     # Test section duplicated for now, will be more important later
     # when we add more packages and skip tests for optional deps
     test:
@@ -100,7 +100,7 @@ outputs:
         - pytest -v --pyargs openfe openfecli
 
 about:
-  home: https://github.com/OpenFreeEnergy/openfe
+  home: https://openfree.energy/
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -110,7 +110,7 @@ about:
     development of open source tools for free energy calculations to guide 
     pharmaceutical drug design and discovery. This package enables researchers
     to plan, execute, and analyze networks of free energy calculations.
-  doc_url: https://openfe.rtfd.io/
+  doc_url: https://docs.openfree.energy
   dev_url: https://github.com/OpenFreeEnergy/openfe
 
 extra:
