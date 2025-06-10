@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstoc
 About openfe
 ------------
 
-Home: https://github.com/OpenFreeEnergy/openfe
+Home: https://openfree.energy/
 
 Package license: MIT
 
@@ -15,7 +15,7 @@ Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://openfe.rtfd.io/
+Documentation: https://docs.openfree.energy
 
 The Open Free Energy (OpenFE) project is dedicated to the maintenance and
 development of open source tools for free energy calculations to guide 
@@ -26,7 +26,7 @@ to plan, execute, and analyze networks of free energy calculations.
 About openfe
 ------------
 
-Home: https://github.com/OpenFreeEnergy/openfe
+Home: https://openfree.energy/
 
 Package license: MIT
 
@@ -34,7 +34,7 @@ Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://openfe.rtfd.io/
+Documentation: https://docs.openfree.energy
 
 The Open Free Energy (OpenFE) project is dedicated to the maintenance and
 development of open source tools for free energy calculations to guide
@@ -45,7 +45,7 @@ to plan, execute, and analyze networks of free energy calculations.
 About openfe-base
 -----------------
 
-Home: https://github.com/OpenFreeEnergy/openfe
+Home: https://openfree.energy/
 
 Package license: MIT
 
@@ -53,7 +53,7 @@ Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://openfe.rtfd.io/
+Documentation: https://docs.openfree.energy
 
 The Open Free Energy (OpenFE) project is dedicated to the maintenance and
 development of open source tools for free energy calculations to guide
