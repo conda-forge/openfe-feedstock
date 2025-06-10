@@ -45,6 +45,7 @@ outputs:
         - plugcli
         - pooch
         - pydantic >=1.10.17
+        - pygraphviz
         - pymbar >=4.0
         - pytest
         - pytest-regressions
@@ -79,10 +80,9 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
-        - {{ pin_subpackage('openfe-base', exact=True) }}
         - jq
         - py3dmol
-        - pygraphviz
+        - {{ pin_subpackage('openfe-base', exact=True) }}
     # Test section duplicated for now, will be more important later
     # when we add more packages and skip tests for optional deps
     test:
