@@ -1,17 +1,20 @@
 {% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: openfe-suite
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3c3a94884174346f20810746029096a2bd4074d5590802f041f2c26c4e3d6fc5
+  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
+  git_rev: 3a7d5f
+  git_depth: -1
+#  url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+#  sha256: 3c3a94884174346f20810746029096a2bd4074d5590802f041f2c26c4e3d6fc5
 
 build:
-  number: 6
+  number: 0
 
 outputs:
   - name: openfe-base
@@ -28,9 +31,9 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
-        - cinnabar ~=0.4.0
+        - cinnabar ~=0.5.0
         - click <8.2
-        - gufe >=1.4.1,<1.5.0
+        - gufe ~=1.5.0
         - kartograf ~=1.0
         - lomap2 >=3.2.1
         - matplotlib-base
@@ -38,9 +41,9 @@ outputs:
         - numpy
         - openfe-analysis ~=0.3.1
         - openff-toolkit >=0.16,<0.17
-        - openmm !=8.1.0,>=8.0.0,<8.2
+        - openmm ==8.2.0 #!=8.1.0,>=8.0.0
         - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
-        - openmmtools >=0.24.2,<0.25
+        - openmmtools >=0.25
         - packaging
         - plugcli
         - pooch
