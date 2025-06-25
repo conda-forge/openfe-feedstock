@@ -35,7 +35,7 @@ outputs:
         - click >=8.2.0
         - gufe ~=1.5.0
         - kartograf ~=1.0
-        - konnektor~=0.2.0
+        - konnektor ~=0.2.0
         - lomap2 >=3.2.1
         - matplotlib-base
         - networkx
