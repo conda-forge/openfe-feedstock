@@ -32,7 +32,7 @@ outputs:
         - setuptools_scm
       run:
         - cinnabar ~=0.5.0
-        - click >=8.2.0
+        - click ~=8.2.0
         - gufe ~=1.5.0
         - kartograf ~=1.0
         - konnektor ~=0.2.0
