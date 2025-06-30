@@ -11,7 +11,7 @@ source:
   sha256: dbaa0e63a9808eb5197151eb580ea47e5a7cccdf8db3c9c4035ed9c24208cca7
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openfe-base
@@ -29,9 +29,9 @@ outputs:
         - setuptools_scm
       run:
         - cinnabar ~=0.5.0
-        - click >=8.2.0, <9.0
+        - click >=8.2.0,<9.0
         - gufe ~=1.5.0
-        - kartograf ~=1.0
+        - kartograf >=1.2.0,<2.0
         - konnektor ~=0.2.0
         - lomap2 >=3.2.1
         - matplotlib-base
@@ -42,7 +42,7 @@ outputs:
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.0
         - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
-        - openmmtools >=0.25, <0.26
+        - openmmtools >=0.25,<0.26
         - packaging
         - pint >=0.24.0
         - plugcli
@@ -57,7 +57,7 @@ outputs:
         - rich
         - threadpoolctl
         - typing-extensions
-    
+
     test:
       imports:
         - openfe
@@ -83,6 +83,7 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
+        - python >={{ python_min }}
         - jq
         - py3dmol
         - {{ pin_subpackage('openfe-base', exact=True) }}
@@ -110,7 +111,7 @@ about:
   summary: Free software for Free Energies.
   description: |
     The Open Free Energy (OpenFE) project is dedicated to the maintenance and
-    development of open source tools for free energy calculations to guide 
+    development of open source tools for free energy calculations to guide
     pharmaceutical drug design and discovery. This package enables researchers
     to plan, execute, and analyze networks of free energy calculations.
   doc_url: https://docs.openfree.energy
