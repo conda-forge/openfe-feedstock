@@ -3,48 +3,6 @@ About openfe-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstock/blob/main/LICENSE.txt)
 
-
-About openfe
-------------
-
-Home: https://openfree.energy/
-
-Package license: MIT
-
-Summary: Free software for Free Energies.
-
-Development: https://github.com/OpenFreeEnergy/openfe
-
-Documentation: https://docs.openfree.energy
-
-The Open Free Energy (OpenFE) project is dedicated to the maintenance and
-development of open source tools for free energy calculations to guide 
-pharmaceutical drug design and discovery. This package enables researchers
-to plan, execute, and analyze networks of free energy calculations.
-
-
-About openfe
-------------
-
-Home: https://openfree.energy/
-
-Package license: MIT
-
-Summary: Free software for Free Energies.
-
-Development: https://github.com/OpenFreeEnergy/openfe
-
-Documentation: https://docs.openfree.energy
-
-The Open Free Energy (OpenFE) project is dedicated to the maintenance and
-development of open source tools for free energy calculations to guide
-pharmaceutical drug design and discovery. This package enables researchers
-to plan, execute, and analyze networks of free energy calculations.
-
-
-About openfe-base
------------------
-
 Home: https://openfree.energy/
 
 Package license: MIT
