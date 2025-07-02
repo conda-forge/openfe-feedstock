@@ -3,7 +3,7 @@ About openfe-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openfe-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/OpenFreeEnergy/openfe
+Home: https://openfree.energy/
 
 Package license: MIT
 
@@ -11,7 +11,7 @@ Summary: Free software for Free Energies.
 
 Development: https://github.com/OpenFreeEnergy/openfe
 
-Documentation: https://openfe.rtfd.io/
+Documentation: https://docs.openfree.energy
 
 The Open Free Energy (OpenFE) project is dedicated to the maintenance and
 development of open source tools for free energy calculations to guide
@@ -38,6 +38,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openfe-green.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openfe.svg)](https://anaconda.org/conda-forge/openfe) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-openfe--base-green.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openfe-base.svg)](https://anaconda.org/conda-forge/openfe-base) |
 
 Installing openfe
 =================
@@ -49,16 +50,16 @@ conda config --add channels conda-forge/label/openfe_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/openfe_rc` channel has been enabled, `openfe` can be installed with `conda`:
+Once the `conda-forge/label/openfe_rc` channel has been enabled, `openfe, openfe-base` can be installed with `conda`:
 
 ```
-conda install openfe
+conda install openfe openfe-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install openfe
+mamba install openfe openfe-base
 ```
 
 It is possible to list all of the versions of `openfe` available on your platform with `conda`:
