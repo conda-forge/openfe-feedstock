@@ -3,7 +3,7 @@
 {% set version = "1.6.0a0" %}
 
 package:
-  name: {{ name|lower }}
+  name: openfe-suite
   version: {{ version }}
 
 source:
