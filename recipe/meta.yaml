@@ -14,9 +14,6 @@ source:
 build:
   noarch: python
   number: 0
-  entry_points:
-    - openfe = openfecli.cli:main
-  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
 
 outputs:
   - name: openfe-base
