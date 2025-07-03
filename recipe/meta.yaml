@@ -1,89 +1,128 @@
 {% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.5.0a1" %}
+{% set version = "1.6.0a0" %}
 
 package:
-  name: {{ name|lower }}
+  name: openfe-suite
   version: {{ version }}
 
 source:
   git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: c402351eb3d4e2bc83415349530526d23eb8fe41
+  git_rev: d466ae50c1e4a8bd6b322665929b59c844ac86ec
   git_depth: -1
 
 build:
   noarch: python
-  number: 1
-  entry_points:
-    - openfe = openfecli.cli:main
-  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 0
 
-requirements:
-  host:
-    - pip
-    - python {{ python_min }}
-    - setuptools
-    - setuptools_scm
-  run:
-    - cinnabar ~=0.4.0
-    - click
-    - gufe >=1.4.1,<1.5.0
-    - kartograf ~=1.0
-    - lomap2 >=3.2.1
-    - matplotlib-base
-    - networkx <3.5
-    - numpy
-    - openfe-analysis ~=0.3.1
-    - openff-toolkit >=0.16,<0.17
-    - openmmforcefields <0.15
-    - openmm !=8.1.0,>=8.0.0,<8.2
-    - openmmtools >=0.24.2,<0.25
-    - packaging
-    - plugcli
-    - pooch
-    - py3dmol
-    - pydantic >=1.10.17
-    - pygraphviz
-    - pymbar >=4.0
-    - pytest
-    - pytest-regressions
-    - python >={{ python_min }}
-    - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
-    - rich
-    - threadpoolctl
-    - typing-extensions
+outputs:
+  - name: openfe-base
+    script: build_base.sh
+    build:
+      noarch: python
+    entry_points:
+      - openfe = openfecli.cli:main
 
-test:
-  imports:
-    - openfe
-  requires:
-    - pip
-    - pytest-xdist
-    - python {{ python_min }}
-  commands:
-    - openfe --help
-    - openfe --version
-    - python -c "import {{ name }}; print({{ name }}.__version__)"
-    - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
-   #- pytest -v -n auto --pyargs openfe openfecli
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+        - setuptools_scm
+      run:
+        - cinnabar ~=0.5.0
+        - click >=8.2.0,<9.0
+        - gufe ~=1.5.0
+        - kartograf >=1.2.0,<2.0
+        - konnektor ~=0.2.0
+        - lomap2 >=3.2.1
+        - matplotlib-base
+        - networkx
+        - numpy
+        - openfe-analysis ~=0.3.1
+        - openff-toolkit-base >=0.16.2,<0.17
+        - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
+        - openmm !=8.1.0,>=8.0.0,<8.3.0
+        - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
+        - openmmtools >=0.25,<0.26
+        - packaging
+        - pint >=0.24.0
+        - plugcli
+        - pooch
+        - pydantic >=1.10.17  # practically, this almost always means pydantic v2 because of our other dependencies.
+        - pygraphviz
+        - pymbar >=4.0
+        - pytest
+        - pytest-regressions
+        - python >={{ python_min }}
+        - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
+        - rich
+        - threadpoolctl
+        - typing-extensions
+
+    test:
+      imports:
+        - openfe
+      requires:
+        - pip
+        - pytest-xdist
+        - python {{ python_min }}
+      commands:
+        - openfe --help
+        - openfe --version
+        - python -c "import {{ name }}; print({{ name }}.__version__)"
+        - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
+        - pytest -v --pyargs openfe openfecli
+
+  - name: openfe
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+        - setuptools_scm
+      run:
+        - python >={{ python_min }}
+        - jq
+        - py3dmol
+        - {{ pin_subpackage('openfe-base', exact=True) }}
+    # Test section duplicated for now, will be more important later
+    # when we add more packages and skip tests for optional deps
+    test:
+      imports:
+        - openfe
+      requires:
+        - pip
+        - pytest-xdist
+        - python {{ python_min }}
+      commands:
+        - openfe --help
+        - openfe --version
+        - python -c "import {{ name }}; print({{ name }}.__version__)"
+        - python -c "import {{ name }}; assert({{ name }}.__version__ == '{{ version }}')"
+        - pytest -v --pyargs openfe openfecli
 
 about:
-  home: https://github.com/OpenFreeEnergy/openfe
+  home: https://openfree.energy/
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Free software for Free Energies.
   description: |
     The Open Free Energy (OpenFE) project is dedicated to the maintenance and
-    development of open source tools for free energy calculations to guide 
+    development of open source tools for free energy calculations to guide
     pharmaceutical drug design and discovery. This package enables researchers
     to plan, execute, and analyze networks of free energy calculations.
-  doc_url: https://openfe.rtfd.io/
+  doc_url: https://docs.openfree.energy
   dev_url: https://github.com/OpenFreeEnergy/openfe
 
 extra:
+  feedstock-name: openfe
   recipe-maintainers:
-    - mikemhenry
     - IAlibay
-    - dwhswenson
     - atravitz
+    - dwhswenson
+    - mikemhenry
