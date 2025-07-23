@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: openfe-suite
@@ -11,7 +11,7 @@ source:
   sha256: dbaa0e63a9808eb5197151eb580ea47e5a7cccdf8db3c9c4035ed9c24208cca7
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: openfe-base
@@ -40,7 +40,7 @@ outputs:
         - openfe-analysis ~=0.3.1
         - openff-toolkit-base >=0.16.2,<0.17
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
-        - openmm !=8.1.0,>=8.0.0,<8.3.0
+        - openmm !=8.1.0,>=8.0.0,<8.3.1  # unpin once we've qualified 8.3.1
         - openmmforcefields >=0.14.2,<0.15 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
         - openmmtools >=0.25,<0.26
         - packaging
@@ -53,7 +53,7 @@ outputs:
         - pytest
         - pytest-regressions
         - python >={{ python_min }}
-        - rdkit <=2025.03.1  # https://github.com/OpenFreeEnergy/gufe/issues/541#issuecomment-2834569617
+        - rdkit 
         - rich
         - threadpoolctl
         - typing-extensions
