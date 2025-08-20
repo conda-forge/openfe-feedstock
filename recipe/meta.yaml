@@ -11,7 +11,7 @@ source:
   sha256: 170c892295da8240f601a9f15ec660913ce345f271cf2e17cde27ff83a1ff31d
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: openfe-base
@@ -38,7 +38,7 @@ outputs:
         - networkx
         - numpy
         - openfe-analysis ~=0.3.1
-        - openff-toolkit-base >=0.16.2,<0.17
+        - openff-toolkit-base >=0.16.2,<0.18
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.1  # unpin once we've qualified 8.3.1
         - openmmforcefields >=0.14.2,<0.16 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
