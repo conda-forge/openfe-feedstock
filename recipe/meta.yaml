@@ -11,7 +11,7 @@ source:
   sha256: 170c892295da8240f601a9f15ec660913ce345f271cf2e17cde27ff83a1ff31d
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   - name: openfe-base
@@ -36,7 +36,7 @@ outputs:
         - lomap2 >=3.2.1
         - matplotlib-base
         - networkx
-        - numpy
+        - numpy <2.3  # https://github.com/OpenFreeEnergy/openfe/issues/1543
         - openfe-analysis ~=0.3.1
         - openff-toolkit-base >=0.16.2,<0.18
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
