@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.6.0" %}
+{% set version = "1.6.1" %}
 
 package:
   name: openfe-suite
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 170c892295da8240f601a9f15ec660913ce345f271cf2e17cde27ff83a1ff31d
+  sha256: 840c014beeb37549feb2e5ea3c2e3af2350279e0aa9a85f6ab2625ada66b211f 
 
 build:
-  number: 6
+  number: 0
 
 outputs:
   - name: openfe-base
