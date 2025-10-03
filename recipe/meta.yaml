@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "openfe" %}
-{% set version = "1.6.0" %}
+{% set version = "1.6.1" %}
 
 package:
   name: openfe-suite
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 170c892295da8240f601a9f15ec660913ce345f271cf2e17cde27ff83a1ff31d
+  sha256: f88019cbc1b6e69aee57e8813d6810619e2e4114d84b95a9d57229abbe8eef2e
 
 build:
-  number: 6
+  number: 0
 
 outputs:
   - name: openfe-base
@@ -53,7 +53,7 @@ outputs:
         - pytest
         - pytest-regressions
         - python >={{ python_min }}
-        - rdkit 
+        - rdkit
         - rich
         - threadpoolctl
         - typing-extensions
