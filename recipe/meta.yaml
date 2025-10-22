@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c59b99fc93e173ab503204bd9959b9c1411590156910fc2ad6a8e4f379f12ee1
+  sha256: 7b3e6e23f2597cc126c6966547286fd252fec64448a03d1fb36e02ae3b43e9c4
 
 build:
   number: 0
