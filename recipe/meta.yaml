@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "openfe" %}
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: openfe-suite
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f88019cbc1b6e69aee57e8813d6810619e2e4114d84b95a9d57229abbe8eef2e
+  sha256: e938fa097ebdcbaf45812a9178561f27acf9b859433a8c9c0c30955d09e31000
 
 build:
   number: 0
@@ -30,7 +30,7 @@ outputs:
       run:
         - cinnabar ~=0.5.0
         - click >=8.2.0,<9.0
-        - gufe ==1.6.1
+        - gufe ==1.7.0
         - kartograf >=1.2.0,<2.0
         - konnektor ~=0.2.0
         - lomap2 >=3.2.1
@@ -47,7 +47,7 @@ outputs:
         - pint >=0.24.0
         - plugcli
         - pooch
-        - pydantic >=1.10.17  # practically, this almost always means pydantic v2 because of our other dependencies.
+        - pydantic >=2.0,<2.12  # https://github.com/openforcefield/openff-interchange/issues/1346
         - pygraphviz
         - pymbar >=4.0
         - pytest
