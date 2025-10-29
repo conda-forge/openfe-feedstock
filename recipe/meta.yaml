@@ -11,7 +11,7 @@ source:
   sha256: e938fa097ebdcbaf45812a9178561f27acf9b859433a8c9c0c30955d09e31000
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openfe-base
@@ -57,6 +57,8 @@ outputs:
         - rich
         - threadpoolctl
         - typing-extensions
+      run_constrained:
+        - dask >=2025
 
     test:
       imports:
