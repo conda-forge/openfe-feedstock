@@ -11,7 +11,7 @@ source:
   sha256: e938fa097ebdcbaf45812a9178561f27acf9b859433a8c9c0c30955d09e31000
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: openfe-base
@@ -28,16 +28,16 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
-        - cinnabar ~=0.5.0
+        - cinnabar >=0.5.0,<0.6.0
         - click >=8.2.0,<9.0
-        - gufe ==1.7.0
+        - gufe >=1.7.1,<1.8
         - kartograf >=1.2.0,<2.0
-        - konnektor ~=0.2.0
+        - konnektor >=0.2.0,<0.3.0
         - lomap2 >=3.2.1
         - matplotlib-base
         - networkx
         - numpy <2.3  # https://github.com/OpenFreeEnergy/openfe/issues/1543
-        - openfe-analysis ~=0.3.1
+        - openfe-analysis >=0.3.1,<0.4.0
         - openff-toolkit-base >=0.16.2,<0.18
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.0  # omit 8.3.0 and 8.3.1 due to https://github.com/openmm/openmm/pull/5069, unpin once we've qualified 8.3.2
