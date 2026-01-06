@@ -11,7 +11,7 @@ source:
   sha256: fe30a0156a07f9d5b4f7e825a73c687000ec65c61e5d3cf23365e5cf0802d0c5
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openfe-base
