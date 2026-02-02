@@ -11,7 +11,7 @@ source:
   sha256: fe30a0156a07f9d5b4f7e825a73c687000ec65c61e5d3cf23365e5cf0802d0c5
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: openfe-base
@@ -46,7 +46,7 @@ outputs:
         - packaging
         - pint >=0.24.0
         - plugcli
-        - pooch
+        - pooch >=1.9.0  # min needed for https://github.com/fatiando/pooch/issues/502
         - psutil <7.2.0  # remove this in next release that includes https://github.com/OpenFreeEnergy/openfe/pull/1779
         - pydantic >=2.0,<2.12  # https://github.com/openforcefield/openff-interchange/issues/1346
         - pygraphviz
