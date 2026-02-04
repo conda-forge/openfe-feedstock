@@ -1,6 +1,6 @@
 {% set python_min = '3.11' %}
 {% set name = "openfe" %}
-{% set version = "1.8.0-alpha" %}
+{% set version = "1.8.0a0" %}
 
 package:
   name: openfe-suite
