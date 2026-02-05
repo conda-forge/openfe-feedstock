@@ -11,7 +11,7 @@ source:
   sha256: 8f38abb69a1faff2818b59c66cdf870c5315cc0f5fce5d09e8d2a6a7c4bd2e3b
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openfe-base
@@ -36,7 +36,7 @@ outputs:
         - lomap2 >=3.2.1
         - matplotlib-base
         - networkx
-        - numpy <2.3  # https://github.com/OpenFreeEnergy/openfe/issues/1543
+        - numpy
         - openfe-analysis >=0.3.1,<0.4.0
         - openff-toolkit-base >=0.16.2,<0.19  # upper pinning 0.19, just so we can test it before conda-forge pulls it in.
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
