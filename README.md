@@ -50,7 +50,7 @@ conda config --add channels conda-forge/label/openfe_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openfe, openfe-base` can be installed with `conda`:
+Once the `conda-forge/label/openfe_rc` channel has been enabled, `openfe, openfe-base` can be installed with `conda`:
 
 ```
 conda install openfe openfe-base
