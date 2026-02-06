@@ -1,18 +1,18 @@
 {% set python_min = '3.11' %}
 {% set name = "openfe" %}
-{% set version = "1.7.0a1" %}
+{% set version = "1.8.1a0" %}
 
 package:
   name: openfe-suite
   version: {{ version }}
 
 source:
-  git_url: https://github.com/OpenFreeEnergy/{{ name }}.git
-  git_rev: 68ace0174ef712c27fe30494e98f153094f8da66
-  git_depth: -1
+  # url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  # we want to use v1.8.0, but not enforce the openmm pin for this experimental release
+  url: https://github.com/OpenFreeEnergy/{{ name }}/archive/refs/tags/v1.8.1.tar.gz
+  sha256: 8f38abb69a1faff2818b59c66cdf870c5315cc0f5fce5d09e8d2a6a7c4bd2e3b
 
 build:
-  noarch: python
   number: 0
 
 outputs:
@@ -30,35 +30,39 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
-        - cinnabar ~=0.5.0
+        - cinnabar >=0.5.0,<0.6.0
         - click >=8.2.0,<9.0
-        - gufe ~=1.6.0
+        - gufe >=1.7.1,<1.8
         - kartograf >=1.2.0,<2.0
-        - konnektor ~=0.2.0
+        - konnektor >=0.2.0,<0.3.0
         - lomap2 >=3.2.1
         - matplotlib-base
         - networkx
         - numpy
-        - openfe-analysis ~=0.3.1
-        - openff-toolkit-base >=0.16.2,<0.18
+        - openfe-analysis >=0.3.1,<0.4.0
+        - openff-toolkit-base >=0.16.2,<0.19  # upper pinning 0.19, just so we can test it before conda-forge pulls it in.
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
-        - openmm !=8.1.0,>=8.0.0,<8.3.2
-        - openmmforcefields >=0.14.2,<0.16 # min pin b/c https://github.com/openmm/openmmforcefields/releases/tag/0.14.2 https://github.com/OpenFreeEnergy/openfe/discussions/1287
+        - openmm !=8.1.0,!=8.3,<8.5
+        - openmmforcefields >=0.15.0  # min needed for https://github.com/OpenFreeEnergy/openfe/pull/1695
         - openmmtools >=0.25,<0.26
         - packaging
         - pint >=0.24.0
         - plugcli
-        - pooch
-        - pydantic >=1.10.17  # practically, this almost always means pydantic v2 because of our other dependencies.
+        - pooch >=1.9.0  # min needed for https://github.com/fatiando/pooch/issues/502
+        - psutil <7.2.0  # remove this in next release that includes https://github.com/OpenFreeEnergy/openfe/pull/1779
+        - pydantic >=2.0,<2.12  # https://github.com/openforcefield/openff-interchange/issues/1346
         - pygraphviz
         - pymbar >=4.0
         - pytest
         - pytest-regressions
+        - pytest-rerunfailures
         - python >={{ python_min }}
-        - rdkit
+        - rdkit 
         - rich
         - threadpoolctl
         - typing-extensions
+      run_constrained:
+        - dask >=2025
 
     test:
       imports:
