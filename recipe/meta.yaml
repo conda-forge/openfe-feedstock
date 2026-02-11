@@ -11,7 +11,7 @@ source:
   sha256: 8f38abb69a1faff2818b59c66cdf870c5315cc0f5fce5d09e8d2a6a7c4bd2e3b
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: openfe-base
@@ -30,7 +30,7 @@ outputs:
       run:
         - cinnabar >=0.5.0,<0.6.0
         - click >=8.2.0,<9.0
-        - gufe >=1.7.1,<1.8
+        - gufe >=1.7.1,<1.9
         - kartograf >=1.2.0,<2.0
         - konnektor >=0.2.0,<0.3.0
         - lomap2 >=3.2.1
@@ -42,7 +42,7 @@ outputs:
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.0  # omit 8.3.0 and 8.3.1 due to https://github.com/openmm/openmm/pull/5069, unpin once we've qualified 8.3.2
         - openmmforcefields >=0.15.0  # min needed for https://github.com/OpenFreeEnergy/openfe/pull/1695
-        - openmmtools >=0.25,<0.26
+        - openmmtools >=0.25.3,<0.26  # fix to support numpy >=2.3: https://github.com/choderalab/openmmtools/pull/793
         - packaging
         - pint >=0.24.0
         - plugcli
