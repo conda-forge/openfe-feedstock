@@ -42,7 +42,7 @@ outputs:
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.0  # omit 8.3.0 and 8.3.1 due to https://github.com/openmm/openmm/pull/5069, unpin once we've qualified 8.3.2
         - openmmforcefields >=0.15.0  # min needed for https://github.com/OpenFreeEnergy/openfe/pull/1695
-        - openmmtools >=0.25,<0.26
+        - openmmtools >=0.25.3,<0.26  # fix to support numpy >=2.3: https://github.com/choderalab/openmmtools/pull/793
         - packaging
         - pint >=0.24.0
         - plugcli
