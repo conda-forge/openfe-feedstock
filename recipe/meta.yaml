@@ -11,7 +11,7 @@ source:
   sha256: 780a759d10614c7849dcd48957bc3e06983d8a1adc6caf4813e3e7a519e61db4 
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: openfe-base
@@ -37,7 +37,7 @@ outputs:
         - matplotlib-base
         - networkx
         - numpy
-        - openfe-analysis >=0.3.1,<0.4.0
+        - openfe-analysis >=0.4.0,<0.5.0  # Upper pin so we can make breaking changes, lower pin b/c https://github.com/OpenFreeEnergy/openfe/issues/1834#issuecomment-3920079481
         - openff-toolkit-base >=0.16.2,<0.19  # upper pinning 0.19, just so we can test it before conda-forge pulls it in.
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,>=8.0.0,<8.3.0  # omit 8.3.0 and 8.3.1 due to https://github.com/openmm/openmm/pull/5069, unpin once we've qualified 8.3.2
