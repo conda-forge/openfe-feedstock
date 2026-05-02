@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.11"
   name: openfe
-  version: "1.11.0"
+  version: "1.11.1"
 
 recipe:
   name: openfe-suite
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://github.com/OpenFreeEnergy/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: c6f1f9dec19ced3d30c6f810ac5a3dd8e07c1716b6e75cf7e0a15e2a884e66d1
+  sha256: f6fe88a5fd87f339c3014749e30c8172b370e0fba617e881d843c02602226693
 
 build:
   number: 0
