@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.11"
   name: openfe
-  version: "1.11.0"
+  version: "1.11.1"
 
 recipe:
   name: openfe-suite
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://github.com/OpenFreeEnergy/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: c6f1f9dec19ced3d30c6f810ac5a3dd8e07c1716b6e75cf7e0a15e2a884e66d1
+  sha256: 8fc47f79dd3f1f3c2a380dba62ad688de45c7203efe3b679994d4d961895372e
 
 build:
   number: 0
@@ -24,12 +24,12 @@ outputs:
       script:
         file: build_base.sh
       python:
-          entry_points:
-            - openfe = openfecli.cli:main
+        entry_points:
+          - openfe = openfecli.cli:main
     requirements:
       host:
         - pip
-        - python ${{ python_min }}.* 
+        - python ${{ python_min }}.*
         - setuptools
         - setuptools_scm
       run:
@@ -95,7 +95,7 @@ outputs:
     requirements:
       host:
         - pip
-        - python ${{ python_min }}.* 
+        - python ${{ python_min }}.*
         - setuptools
         - setuptools_scm
       run:
