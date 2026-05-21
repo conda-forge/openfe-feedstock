@@ -14,7 +14,7 @@ source:
   sha256: 8fc47f79dd3f1f3c2a380dba62ad688de45c7203efe3b679994d4d961895372e
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -38,7 +38,7 @@ outputs:
         - gufe >=1.10.0,<1.11
         - kartograf >=1.2.0,<2.0
         - konnektor >=0.3.0,<0.4.0
-        - lomap2 >=3.2.1
+        - lomap2 >=3.2.1,<4.0
         - matplotlib-base
         - networkx
         - numpy
