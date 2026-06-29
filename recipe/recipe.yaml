@@ -79,6 +79,7 @@ outputs:
             - pip
             - pytest-xdist
             - python ${{ python_min }}.*
+            - py3dmol  # TODO: remove this when we improve our optional deps testing
         script:
           - openfe --help
           - openfe --version
