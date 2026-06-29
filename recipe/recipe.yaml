@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.11"
   name: openfe
-  version: "1.11.1"
+  version: "1.12.0"
 
 recipe:
   name: openfe-suite
@@ -11,10 +11,10 @@ recipe:
 
 source:
   url: https://github.com/OpenFreeEnergy/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 8fc47f79dd3f1f3c2a380dba62ad688de45c7203efe3b679994d4d961895372e
+  sha256: 72732e34ca26ae78bd46e00ddc6d2c5cc88ba6a8db296593f7a85a232d110c88
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -33,16 +33,16 @@ outputs:
         - setuptools
         - setuptools_scm
       run:
-        - cinnabar >=0.5.0,<0.6.0
+        - cinnabar ~=0.6.0
         - click >=8.2.0,<9.0
-        - gufe >=1.10.0,<1.11
-        - kartograf >=1.2.0,<2.0
-        - konnektor >=0.3.0,<0.4.0
-        - lomap2 >=3.2.1,<3.3.0  # update this to <4.0 on the next openfe version release
+        - gufe ~=1.12.0
+        - kartograf ~=2.0.0
+        - konnektor ~=0.4.0
+        - lomap2 ~=3.3.0
         - matplotlib-base
         - networkx
         - numpy
-        - openfe-analysis >=0.4.0,<0.5.0  # Upper pin so we can make breaking changes, lower pin b/c https://github.com/OpenFreeEnergy/openfe/issues/1834#issuecomment-3920079481
+        - openfe-analysis ~=0.5.0
         - openff-toolkit-base >=0.16.2,<0.19  # upper pinning 0.19, just so we can test it before conda-forge pulls it in.
         - openff-units ==0.3.1  # https://github.com/OpenFreeEnergy/openfe/pull/1374
         - openmm !=8.1.0,!=8.3,>=8.0.0,<8.5.0  # omit 8.3.0 and 8.3.1 due to https://github.com/openmm/openmm/pull/5069
