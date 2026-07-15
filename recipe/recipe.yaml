@@ -14,7 +14,7 @@ source:
   sha256: 72732e34ca26ae78bd46e00ddc6d2c5cc88ba6a8db296593f7a85a232d110c88
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -60,7 +60,7 @@ outputs:
         - pytest-regressions
         - pytest-rerunfailures
         - python >=${{ python_min }}
-        - rdkit
+        - rdkit <2026.03  # https://github.com/OpenFreeEnergy/openfe/issues/2067
         - rich
         - threadpoolctl
         - typing-extensions
