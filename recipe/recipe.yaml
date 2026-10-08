@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://github.com/OpenFreeEnergy/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: f280f22cb9c7ab12cd8a8ec0cda7d16adf1ebbe96da95cdd7b71bec211ccab70
+  sha256: 3ca25f5ff4234226a71e61cb25d492fcfcc0964e981373c05790bf683fcf2e12
 
 build:
   number: 0
