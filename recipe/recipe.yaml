@@ -58,7 +58,7 @@ outputs:
         - pydantic ~=2.13.0 # don't trust that 2.14 won't break
         - pygraphviz
         - pymbar >=4.0
-        - pytest
+        - pytest < 9.2.0
         - pytest-regressions
         - pytest-rerunfailures
         - python >=${{ python_min }}
