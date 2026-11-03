@@ -14,7 +14,7 @@ source:
   sha256: 3ca25f5ff4234226a71e61cb25d492fcfcc0964e981373c05790bf683fcf2e12
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -58,7 +58,7 @@ outputs:
         - pydantic ~=2.13.0 # don't trust that 2.14 won't break
         - pygraphviz
         - pymbar >=4.0
-        - pytest
+        - pytest < 9.2.0
         - pytest-regressions
         - pytest-rerunfailures
         - python >=${{ python_min }}
